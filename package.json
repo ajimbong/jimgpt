@@ -1,7 +1,7 @@
 {
-  "name": "jim_gpt",
+  "name": "jimgpt",
   "version": "1.0.0",
-  "description": "A telegram chatbot based on OpenAI's ChatGPT",
+  "description": "A telegram chatbot based on OpenAI's ChatGPT model",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,6 +17,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "node-telegram-bot-api": "^0.61.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "openai": "^3.1.0"
   }
 }
