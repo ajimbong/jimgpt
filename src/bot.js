@@ -8,7 +8,7 @@ const bot = new telegramBot(TELEGRAM_TOKEN, {polling: true});
 bot.on('message', async (message)=>{
     const text = message.text;
     const chatId = message.from.id;
-    const isBot = msg.from.is_bot;
+    const isBot = message.from.is_bot;
 
     const greetedUsers = new Set();
 
@@ -24,11 +24,17 @@ bot.on('message', async (message)=>{
             // Send a reply message
             bot.sendMessage(chatId, 'Welcome back!');
         }
+    } else {
+        try {
+            const res = await getPrompt(text);
+            bot.sendMessage(chatId, res);
+        }
+        catch (ex) {
+            console.error(ex);
+        }
     }
 
-    const res = await getPrompt(text);
 
-    bot.sendMessage(chatId, res);
 })
 
 bot.on("polling_error", (error) => {
