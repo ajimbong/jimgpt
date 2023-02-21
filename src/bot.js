@@ -34,7 +34,7 @@ bot.on('message', async (message)=>{
         }
     }
 
-
+    console.log(message)
 })
 
 bot.on("polling_error", (error) => {
